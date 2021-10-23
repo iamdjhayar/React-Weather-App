@@ -3,7 +3,7 @@ import ReactSpeedometer from "react-d3-speedometer"
 import {ArrowCircleUpIcon, ArrowCircleDownIcon,LocationMarkerIcon} from '@heroicons/react/outline'
 
 function DailyHighlights(props){
-    console.log(props)
+
     const deg = props.data.wind_deg
     let windDirection = ""
 
@@ -31,8 +31,8 @@ function DailyHighlights(props){
     return(
         <div>
             <p className="font-bold">Todays Highlights</p>
-            <div className="flex flex-row mt-5">
-                <div className="w-4/12 bg-white rounded-md shadow-sm p-3 m-5">
+            <div className="sm:flex-none lg:flex flex-row mt-3">
+                <div className="sm:w-full lg:w-4/12 bg-white rounded-md shadow-sm p-3 m-3">
                     <div className="text-gray-500 text-sm">
                         UV Index
                     </div>
@@ -52,7 +52,7 @@ function DailyHighlights(props){
                         </div>
                     </div>
                 </div>
-                <div className="w-4/12 bg-white rounded-md shadow-sm p-3 m-5">
+                <div className="lg:w-4/12 bg-white rounded-md shadow-sm p-3 m-3">
                     <div className="text-gray-500 text-sm">
                         Wind Status
                     </div>
@@ -68,7 +68,7 @@ function DailyHighlights(props){
                         </div>
                     </div>
                 </div>
-                <div className="w-4/12 bg-white rounded-md shadow-sm p-3 m-5">
+                <div className="lg:w-4/12 bg-white rounded-md shadow-sm p-3 m-3">
                     <div className="text-gray-500 text-sm">
                         Sunrise/Sunset
                     </div>
@@ -90,8 +90,8 @@ function DailyHighlights(props){
                     </div>
                 </div>
             </div>
-            <div className="flex flex-row mb-5">
-                <div className="w-4/12 bg-white rounded-md shadow-sm p-3 m-5">
+            <div className="lg:flex lg:flex-row mb-5">
+                <div className="lg:w-4/12 bg-white rounded-md shadow-sm p-3 m-3">
                     <div className="text-gray-500 text-sm">
                         Humidity
                     </div>
@@ -102,11 +102,11 @@ function DailyHighlights(props){
                         <span className="text-xs">Pressure: {props.data.pressure} hPa</span>
                     </div>
                     <div>
-                        <span className="text-xs">Dew Point: {props.data.dew_point + '\u00b0C'}</span>
+                        <span className="text-xs">Dew Point: {Math.round((props.data.dew_point-273.15)) + '\u00b0C'}</span>
                     </div>
                     
                 </div>
-                <div className="w-4/12 bg-white rounded-md shadow-sm p-3 m-5">
+                <div className="lg:w-4/12 bg-white rounded-md shadow-sm p-3 m-3">
                     <div className="text-gray-500 text-sm">
                         Visibility
                     </div>
@@ -114,7 +114,7 @@ function DailyHighlights(props){
                         {props.data.visibility/1000}<span className="text-base">km</span>
                     </div>
                 </div>
-                <div className="w-4/12 bg-white rounded-md shadow-sm p-3 m-5">
+                <div className="lg:w-4/12 bg-white rounded-md shadow-sm p-3 m-3">
                     <div className="text-gray-500 text-sm">
                         Air Quality
                     </div>

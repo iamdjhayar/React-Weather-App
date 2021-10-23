@@ -22,7 +22,7 @@ function App() {
       });
     },[])
   return(
-    <div className="flex h-screen">
+    <div className="lg:flex sm:flex-none lg:h-screen">
       <WeatherMainInfo api={key}/>
       {isLoading?null:<MainContainer data={oneCall}/>}
     </div>
