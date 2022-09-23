@@ -14,7 +14,6 @@ function DaysOfForcast(props){
     const daily = props.data.map((item) =>{
             if(count===0){
             }else{
-                console.log(item)
             return <div key={item.dt} className="m-3 p-2 rounded-sm bg-white shadow-sm w-full flex flex-col items-center justify-center">
                 <div className="text-sm font-semibold">{convert(item.dt)}</div>
                 <div>
